@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: profileservice
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: phani kumar
+Implementation-Vendor-Id: com.cts.cde
+Build-Jdk: 1.8.0_141
+Implementation-URL: http://projects.spring.io/spring-boot/profileservi
+ ce/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
