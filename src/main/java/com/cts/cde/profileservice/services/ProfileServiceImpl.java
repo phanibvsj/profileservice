@@ -9,10 +9,7 @@ import com.cts.cde.profileservice.entities.Profile;
 import com.cts.cde.profileservice.models.ProfileModel;
 import com.cts.cde.profileservice.repositories.ProfileRepository;
 
-/**
- * @author phani kumar
- *
- */
+
 @Service
 public class ProfileServiceImpl implements ProfileService {
 
@@ -44,7 +41,20 @@ public class ProfileServiceImpl implements ProfileService {
 	 */
 	@Override
 	public void update(ProfileModel model) {
-		// TODO Auto-generated method stub
+		Profile profile = profileRepository.findByUserName(model.getUserName());
+		if ( profile != null ){
+			System.out.println("updating profile");
+			
+			profile.setUserName(model.getUserName());
+			profile.setFirstName(model.getFirstName());
+			profile.setLastName(model.getLastName());
+			profile.setBio(model.getBio());
+			profile.setEmail(model.getEmail());
+			profile.setWebSite(model.getWebSite());
+			
+			profileRepository.save(profile);
+			
+		}
 
 	}
 

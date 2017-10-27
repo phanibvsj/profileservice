@@ -3,10 +3,7 @@
  */
 package com.cts.cde.profileservice.models;
 
-/**
- * @author phani kumar
- *
- */
+
 public class ProfileModel {
 
 	private String userName;

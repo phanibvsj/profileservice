@@ -3,10 +3,13 @@
  */
 package com.cts.cde.profileservice.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * @author phani kumar
@@ -32,8 +35,6 @@ public class Profile {
 	private String webSite;
 	
 	private long posts;
-	
-	private long following;
 	
 	private long followers;
 	
@@ -147,20 +148,6 @@ public class Profile {
 	 */
 	public void setPosts(long posts) {
 		this.posts = posts;
-	}
-
-	/**
-	 * @return the following
-	 */
-	public long getFollowing() {
-		return following;
-	}
-
-	/**
-	 * @param following the following to set
-	 */
-	public void setFollowing(long following) {
-		this.following = following;
 	}
 
 	/**

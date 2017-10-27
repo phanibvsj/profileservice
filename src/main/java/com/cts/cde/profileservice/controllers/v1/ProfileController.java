@@ -13,10 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cts.cde.profileservice.models.ProfileModel;
 import com.cts.cde.profileservice.services.ProfileService;
 
-/**
- * @author phani kumar
- *
- */
+
 @RestController
 @RequestMapping(path="/profile/v1")
 public class ProfileController {
@@ -27,15 +24,25 @@ public class ProfileController {
 	@RequestMapping(path="/{username}", method=RequestMethod.GET)
 	public ProfileModel getProfile(@PathVariable(name="username") String userName){
 		System.out.println("Requested Profile: " + userName);
-		return profileService.findByUserName(userName);
+		ProfileModel profile = profileService.findByUserName(userName);
+		
+		return profile;
 		
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public ProfileModel createProfile(@PathVariable(name="username") String userName, @RequestBody(required=true) ProfileModel profile){
+	public void createProfile(@RequestBody(required=true) ProfileModel profile){
 		System.out.println("Requested Profile: " + profile.getUserName());
 		System.out.println("Profile:" + profile);
 		profileService.create(profile);
-		return new ProfileModel();
+		
+	}
+	
+	@RequestMapping(method=RequestMethod.PUT)
+	public void updateProfile(@RequestBody(required=true) ProfileModel profile){
+		System.out.println("Requested Profile: " + profile.getUserName());
+		System.out.println("Profile:" + profile);
+		profileService.update(profile);
+		
 	}
 }
